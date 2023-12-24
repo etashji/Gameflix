@@ -1,4 +1,4 @@
-﻿using Gameflix.Areas.Users.Models;
+﻿using Gameflix.Areas.Cyberpunk2077.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,17 +7,15 @@ using System.Web;
 
 namespace Gameflix.Contexts
 {
-    public class UsersContext : DbContext
+    public class Cyberpunk2077Context : DbContext
     {
-        public UsersContext() : base("usersConnection") { }
+        public Cyberpunk2077Context() : base("cyberpunk2077Connection") { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<User> Users { get; set; }
-
-        public System.Data.Entity.DbSet<Gameflix.Areas.Cyberpunk2077.Models.Season1> Season1 { get; set; }
+        public DbSet<Season1> Season1 { get; set; }
     }
 }
