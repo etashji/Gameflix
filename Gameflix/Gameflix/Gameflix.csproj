@@ -127,14 +127,27 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Cyberpunk2077\Controllers\Season1Controller.cs" />
+    <Compile Include="Areas\Cyberpunk2077\Cyberpunk2077AreaRegistration.cs" />
+    <Compile Include="Areas\Cyberpunk2077\Models\Season1.cs" />
     <Compile Include="Areas\Users\Controllers\UsersController.cs" />
     <Compile Include="Areas\Users\Models\User.cs" />
     <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
+    <Compile Include="Contexts\Cyberpunk2077Context.cs" />
     <Compile Include="Contexts\UsersContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312241858169_Cyberpunk2077Season1.cs" />
+    <Compile Include="Migrations\202312241858169_Cyberpunk2077Season1.designer.cs">
+      <DependentUpon>202312241858169_Cyberpunk2077Season1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312241859341_Cyberpunk2077Season11.cs" />
+    <Compile Include="Migrations\202312241859341_Cyberpunk2077Season11.designer.cs">
+      <DependentUpon>202312241859341_Cyberpunk2077Season11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +184,14 @@
     <Content Include="Areas\Users\Views\Users\Edit.cshtml" />
     <Content Include="Areas\Users\Views\Users\Index.cshtml" />
     <Content Include="Areas\Users\Views\Users\Login.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\web.config" />
+    <Content Include="Areas\Cyberpunk2077\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season1\Create.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season1\Delete.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season1\Details.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season1\Edit.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season1\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -199,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Cyberpunk2077\Data\" />
     <Folder Include="Areas\Users\Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +249,14 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202312241858169_Cyberpunk2077Season1.resx">
+      <DependentUpon>202312241858169_Cyberpunk2077Season1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312241859341_Cyberpunk2077Season11.resx">
+      <DependentUpon>202312241859341_Cyberpunk2077Season11.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
