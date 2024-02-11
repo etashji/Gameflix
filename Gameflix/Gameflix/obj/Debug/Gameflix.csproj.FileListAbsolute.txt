@@ -81,6 +81,6 @@ F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.csproj.CoreCompil
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.csproj.CopyComplete
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.dll
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.pdb
-F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.Cyberpunk2077Season1.resources
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.csproj.GenerateResource.cache
-F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.Cyberpunk2077Season11.resources
+F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.InitialCreate.resources
+F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.Users.resources

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h1 class="white-font">Cyberpunk 2077</h1>
+<br />
+<h2 class="white-font">Welcome to Night City! Join "V", aka Vincent, on his journey to become a legend of Night City in the year 2077.</h2>
+<br />
+<br />
+<br />
+<br />
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Season 1
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body center">
+                <strong>"V" leaves behind his Nomad gang to come to Night City, seeking his fame and fortune. Along the way, he makes 
+                many friends, as well as enemies.</strong>
+                <br />
+                <br />
+                <a href="@Url.Action("Index", "Season1", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content width">Watch</a>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,51 +1,55 @@
 ﻿@model IEnumerable<Gameflix.Areas.Cyberpunk2077.Models.Season1>
+@using Gameflix.Areas.Cyberpunk2077.Models
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@{
+    bool isLoggedIn = true;
+    if (string.IsNullOrWhiteSpace(User.Identity.Name))
+    {
+        isLoggedIn = false;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.episodeNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Video)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.episodeNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Video)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Season1Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Season1Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Season1Id })
-        </td>
-    </tr>
 }
 
-</table>
+
+<h2 class="white-font">Season 1</h2>
+@if (isLoggedIn)
+{
+    <a href="@Url.Action("Create", "Season1", new { area = "Cyberpunk2077"})" class="btn btn-primary card-btn center-content width">Create New</a>
+}
+<br />
+@foreach (var item in Model)
+{
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="@item.Season1Id">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@item.Season1Id" aria-expanded="true" aria-controls="collapse-@item.Season1Id">
+                    S 1 E @Html.DisplayFor(modelItem => item.episodeNumber): @Html.DisplayFor(modelItem => item.Title)
+                </button>
+                <br />
+            </h2>
+            <div id="collapse-@item.Season1Id" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body center">
+                    <strong>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </strong>
+                    <br />
+                    <br />
+                    <a href="@Url.Action("Details", "Season1", new { id = item.Season1Id })" class="btn btn-primary card-btn center-content width">Watch</a>
+                    @if (isLoggedIn)
+                    {<br />
+                        <a href="@Url.Action("Edit", "Season1", new { id = item.Season1Id })" class="btn btn-primary card-btn center-content width">Edit</a>
+                        <br />
+                        <a href="@Url.Action("Delete", "Season1", new { id = item.Season1Id })" class="btn btn-primary card-btn center-content width">Delete</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<a href="@Url.Action("Index", "Seasons", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content width">Seasons</a>
