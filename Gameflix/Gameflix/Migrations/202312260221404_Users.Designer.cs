@@ -7,13 +7,13 @@ namespace Gameflix.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Cyberpunk2077Season1 : IMigrationMetadata
+    public sealed partial class Users : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Cyberpunk2077Season1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Users));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312241858169_Cyberpunk2077Season1"; }
+            get { return "202312260221404_Users"; }
         }
         
         string IMigrationMetadata.Source

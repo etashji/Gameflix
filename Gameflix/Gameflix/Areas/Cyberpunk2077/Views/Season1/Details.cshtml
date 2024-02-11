@@ -1,50 +1,64 @@
 ﻿@model Gameflix.Areas.Cyberpunk2077.Models.Season1
+@using Gameflix.Contexts
+@using Gameflix.Areas.Cyberpunk2077.Models;
 
-@{
-    ViewBag.Title = "Details";
+@functions
+{
+    private Cyberpunk2077Context db = new Cyberpunk2077Context();
+
 }
 
-<h2>Details</h2>
+@{
+    bool isLoggedIn = true;
+    if (string.IsNullOrWhiteSpace(User.Identity.Name))
+    {
+        isLoggedIn = false;
+    }
 
-<div>
-    <h4>Season1</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.episodeNumber)
-        </dt>
+    bool hasNext = db.Season1.Any(s => s.episodeNumber == Model.episodeNumber + 1);
 
-        <dd>
-            @Html.DisplayFor(model => model.episodeNumber)
-        </dd>
+}
+   
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+    @{
+        ViewBag.Title = "Details";
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <h2 class="white-font">Cyberpunk 2077</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+    <div class="center center-video">
+        <h4 class="white-font">Season1</h4>
+        <hr class="white-font" />
+        <h3 class="white-font">
+            S 1 E @Html.DisplayFor(model => model.episodeNumber): @Html.DisplayFor(model => model.Title)
+        </h3>
+        <dl class="dl-horizontal ">
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dd class="white-font">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Video)
-        </dt>
+            <dd>
+                <iframe width="1020" height="630" src="@Html.DisplayFor(model => model.Video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Video)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Season1Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @{ 
+            if (isLoggedIn) 
+            { 
+                <input type="submit" value="Delete" class="btn btn-primary card-btn center-content width" />
+                <br />
+            }
+            if (hasNext)
+            {
+                Season1 next = db.Season1.FirstOrDefault(s => s.episodeNumber == Model.episodeNumber + 1);
+                <button class="btn btn-primary card-btn center-content center width">
+                    @Html.ActionLink("Next", "Details", new { id = next.Season1Id }, new { htmlAttributes = new { @class = "btn btn-primary card-btn center-content center width" } })
+                </button>
+                <br />
+            }
+        }
+        <a href="@Url.Action("Index", "Season1", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content center width">Episodes</a>
+    </p>

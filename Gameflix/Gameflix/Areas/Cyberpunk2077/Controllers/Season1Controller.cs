@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Gameflix.Areas.Cyberpunk2077.Models;
 using Gameflix.Contexts;
 
@@ -120,6 +121,17 @@ namespace Gameflix.Areas.Cyberpunk2077.Controllers
             db.Season1.Remove(season1);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Signout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+
+        public ActionResult Login()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)
