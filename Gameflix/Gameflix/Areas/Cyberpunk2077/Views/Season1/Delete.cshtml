@@ -4,43 +4,43 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2 class="white-font">Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Season1</h4>
-    <hr />
+<h3 class="white-font">Are you sure you want to delete this?</h3>
+<div class="center center-video">
+    <h4 class="white-font">Season1</h4>
+    <hr class="white-font"/>
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="white-font">
             @Html.DisplayNameFor(model => model.episodeNumber)
         </dt>
 
-        <dd>
+        <dd class="white-font">
             @Html.DisplayFor(model => model.episodeNumber)
         </dd>
-
-        <dt>
+        <br />
+        <dt class="white-font">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
 
-        <dd>
+        <dd class="white-font">
             @Html.DisplayFor(model => model.Title)
         </dd>
-
-        <dt>
+        <br />
+        <dt class="white-font">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
-        <dd>
+        <dd class="white-font">
             @Html.DisplayFor(model => model.Description)
         </dd>
-
-        <dt>
+        <br />
+        <dt class="white-font">
             @Html.DisplayNameFor(model => model.Video)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Video)
+            <iframe width="1020" height="630" src="@Html.DisplayFor(model => model.Video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </dd>
 
     </dl>
@@ -48,9 +48,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div>
+    <input type="submit" value="Delete" class="btn btn-primary card-btn center-content width" /> |
+    <a href="@Url.Action("Index", "Season1", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content center width">Back to List</a>
+</div>
     }
 </div>

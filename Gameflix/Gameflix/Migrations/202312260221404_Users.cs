@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Cyberpunk2077Season1 : DbMigration
+    public partial class Users : DbMigration
     {
         public override void Up()
         {

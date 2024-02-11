@@ -18,3 +18,130 @@ select,
 textarea {
     max-width: 280px;
 }
+
+@font-face {
+    font-family: 'graphique w01 regular';
+    src: url('../fonts/graphique w01 regular.ttf') format('truetype');
+}
+
+.gameflix {
+    font-family: 'graphique w01 regular';
+    color: red;
+    font-size: 36px;
+}
+
+.gameflix:hover {
+    color: darkred;
+}
+
+.fonts {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.background {
+    background-color: black;
+}
+
+
+.gameflix-large {
+    font-family: 'graphique w01 regular';
+    color: red;
+    font-size: 144px;
+    text-align: center;
+}
+
+.card-body {
+    background-color: black;
+    color: white;
+}
+
+.card {
+    border: none;
+}
+
+.card-btn {
+    background-color: red;
+    border: none;
+}
+
+.card-btn:hover {
+    background-color: darkred;
+}
+
+.white-font {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align:center;
+    opacity: 1.0 !important;
+}
+
+.cyberpunk-background{
+    background-image: url(../Content/Images/Cyberpunk2077/cyberpunkbackground.jpg);
+}
+
+.accordion-button {
+    color: white;
+    background-color: red;
+    display: block;
+    text-align: center;
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: red;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-item {
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.center-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.width {
+    width: 150px;
+}
+
+.small-width {
+    width: 75px;
+}
+
+.textbox {
+    width: 700px;
+    height: 500px;
+}
+
+.black-font {
+    color: black;
+}
+
+.center-video {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 75%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}

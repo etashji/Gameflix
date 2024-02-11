@@ -4,26 +4,26 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="white-font">Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Users", new { area = "Users" })" class="btn btn-primary card-btn center-content center width">Create</a>
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th class="white-font">
             @Html.DisplayNameFor(model => model.Username)
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="white-font">
             @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.ActionLink("Change Password", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            <br />
+            <a href="@Url.Action("Delete", "Users", new { id = item.UserId })" class="btn btn-primary card-btn center-content center width">Delete</a>
+            <br />
+            <a href="@Url.Action("Edit", "Users", new { id = item.UserId })" class="btn btn-primary card-btn center-content center width">Change Password</a>
         </td>
     </tr>
 }

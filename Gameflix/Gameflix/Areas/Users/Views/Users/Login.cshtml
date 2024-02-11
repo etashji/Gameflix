@@ -4,7 +4,7 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<h2 class="white-font">Login</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,36 +12,33 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>User</h4>
-        <hr />
+        <h4 class="white-font">User</h4>
+        <hr class="white-font"/>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        <div class="form-group center">
+            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2 white-font center" })
+            <div class="col-md-10 center-content">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control center-content" } })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        <br />
+        <div class="form-group center">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2 white-font center" })
+            <div class="col-md-10 center-content">
+                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control center-content" } })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
+        <br />
+        <div>
+            <div>
+                <br />
+                <input type="submit" value="Login" class="btn btn-primary card-btn center-content width" />
+                <br />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
