@@ -7,17 +7,6 @@
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Season1",
-                c => new
-                    {
-                        Season1Id = c.Int(nullable: false, identity: true),
-                        episodeNumber = c.Int(nullable: false),
-                        Title = c.String(nullable: false),
-                        Description = c.String(nullable: false),
-                        Video = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.Season1Id);
             
         }
         

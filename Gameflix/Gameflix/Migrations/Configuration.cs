@@ -5,15 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Gameflix.Contexts.UsersContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Gameflix.Contexts.Cyberpunk2077Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Gameflix.Contexts.UsersContext";
         }
 
-        protected override void Seed(Gameflix.Contexts.UsersContext context)
+        protected override void Seed(Gameflix.Contexts.Cyberpunk2077Context context)
         {
             //  This method will be called after migrating to the latest version.
 
