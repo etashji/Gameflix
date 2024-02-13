@@ -46,11 +46,7 @@
     </div>
     <p>
         @{ 
-            if (isLoggedIn) 
-            { 
-                <input type="submit" value="Delete" class="btn btn-primary card-btn center-content width" />
-                <br />
-            }
+           
             if (hasNext)
             {
                 Season1 next = db.Season1.FirstOrDefault(s => s.episodeNumber == Model.episodeNumber + 1);

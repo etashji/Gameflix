@@ -1,0 +1,60 @@
+﻿@model Gameflix.Areas.Cyberpunk2077.Models.Season2
+
+@using Gameflix.Contexts
+@using Gameflix.Areas.Cyberpunk2077.Models;
+
+@functions
+{
+    private Cyberpunk2077Context db = new Cyberpunk2077Context();
+
+}
+
+@{
+    bool isLoggedIn = true;
+    if (string.IsNullOrWhiteSpace(User.Identity.Name))
+    {
+        isLoggedIn = false;
+    }
+
+    bool hasNext = db.Season2.Any(s => s.episodeNumber == Model.episodeNumber + 1);
+
+}
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="white-font">Cyberpunk 2077</h2>
+
+<div class="center center-video">
+    <h4 class="white-font">Season 2</h4>
+    <hr class="white-font" />
+    <h3 class="white-font">
+        S 1 E @Html.DisplayFor(model => model.episodeNumber): @Html.DisplayFor(model => model.Title)
+    </h3>
+    <dl class="dl-horizontal ">
+
+        <dd class="white-font">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dd>
+            <iframe width="1020" height="630" src="@Html.DisplayFor(model => model.Video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @{ 
+        if (hasNext)
+        {
+            Season2 next = db.Season2.FirstOrDefault(s => s.episodeNumber == Model.episodeNumber + 1);
+            <button class="btn btn-primary card-btn center-content center width">
+                @Html.ActionLink("Next", "Details", new { id = next.Season2Id }, new { htmlAttributes = new { @class = "btn btn-primary card-btn center-content center width" } })
+            </button>
+            <br />
+        }
+    }
+    <a href="@Url.Action("Index", "Season2", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content center width">Episodes</a>
+</p>

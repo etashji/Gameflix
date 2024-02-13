@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Gameflix.Areas.Cyberpunk2077.Models.Season2>
+@using Gameflix.Areas.Cyberpunk2077.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    bool isLoggedIn = true;
+    if (string.IsNullOrWhiteSpace(User.Identity.Name))
+    {
+        isLoggedIn = false;
+    }
+
+}
+
+
+<h2 class="white-font">Season 2</h2>
+@if (isLoggedIn)
+{
+    <a href="@Url.Action("Create", "Season2", new { area = "Cyberpunk2077"})" class="btn btn-primary card-btn center-content width">Create New</a>
+}
+<br />
+@foreach (var item in Model)
+{
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="@item.Season2Id">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@item.Season2Id" aria-expanded="true" aria-controls="collapse-@item.Season2Id">
+                    S 1 E @Html.DisplayFor(modelItem => item.episodeNumber): @Html.DisplayFor(modelItem => item.Title)
+                </button>
+                <br />
+            </h2>
+            <div id="collapse-@item.Season2Id" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body center">
+                    <strong>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </strong>
+                    <br />
+                    <br />
+                    <a href="@Url.Action("Details", "Season2", new { id = item.Season2Id })" class="btn btn-primary card-btn center-content width">Watch</a>
+                    @if (isLoggedIn)
+                    {<br />
+                        <a href="@Url.Action("Edit", "Season2", new { id = item.Season2Id })" class="btn btn-primary card-btn center-content width">Edit</a>
+                        <br />
+                        <a href="@Url.Action("Delete", "Season2", new { id = item.Season2Id })" class="btn btn-primary card-btn center-content width">Delete</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<a href="@Url.Action("Index", "Seasons", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content width">Seasons</a>

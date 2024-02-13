@@ -84,3 +84,4 @@ F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.pdb
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.csproj.GenerateResource.cache
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.InitialCreate.resources
 F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.Users.resources
+F:\Apps\Gameflix\Gameflix\Gameflix\Gameflix\obj\Debug\Gameflix.Migrations.emptymigration.resources

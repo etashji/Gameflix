@@ -128,9 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Cyberpunk2077\Controllers\Season1Controller.cs" />
+    <Compile Include="Areas\Cyberpunk2077\Controllers\Season2Controller.cs" />
     <Compile Include="Areas\Cyberpunk2077\Controllers\SeasonsController.cs" />
     <Compile Include="Areas\Cyberpunk2077\Cyberpunk2077AreaRegistration.cs" />
     <Compile Include="Areas\Cyberpunk2077\Models\Season1.cs" />
+    <Compile Include="Areas\Cyberpunk2077\Models\Season2.cs" />
     <Compile Include="Areas\Users\Controllers\UsersController.cs" />
     <Compile Include="Areas\Users\Models\User.cs" />
     <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
@@ -147,6 +149,10 @@
     <Compile Include="Migrations\202312260221404_Users.cs" />
     <Compile Include="Migrations\202312260221404_Users.designer.cs">
       <DependentUpon>202312260221404_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402130056209_emptymigration.cs" />
+    <Compile Include="Migrations\202402130056209_emptymigration.designer.cs">
+      <DependentUpon>202402130056209_emptymigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +203,11 @@
     <Content Include="Areas\Cyberpunk2077\Views\Season1\Index.cshtml" />
     <Content Include="Fonts\Graphique W01 Regular.ttf" />
     <Content Include="Areas\Cyberpunk2077\Views\Seasons\Index.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season2\Create.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season2\Delete.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season2\Details.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season2\Edit.cshtml" />
+    <Content Include="Areas\Cyberpunk2077\Views\Season2\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -260,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312260221404_Users.resx">
       <DependentUpon>202312260221404_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402130056209_emptymigration.resx">
+      <DependentUpon>202402130056209_emptymigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
