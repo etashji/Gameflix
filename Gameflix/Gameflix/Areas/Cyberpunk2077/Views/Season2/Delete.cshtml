@@ -1,0 +1,57 @@
+﻿@model Gameflix.Areas.Cyberpunk2077.Models.Season2
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="white-font">Delete</h2>
+
+<h3 class="white-font">Are you sure you want to delete this?</h3>
+<div class="center center-video">
+    <h4 class="white-font">Season 2</h4>
+    <hr class="white-font" />
+    <dl class="dl-horizontal">
+        <dt class="white-font">
+            @Html.DisplayNameFor(model => model.episodeNumber)
+        </dt>
+
+        <dd class="white-font">
+            @Html.DisplayFor(model => model.episodeNumber)
+        </dd>
+        <br />
+        <dt class="white-font">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd class="white-font">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <br />
+        <dt class="white-font">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd class="white-font">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <br />
+        <dt class="white-font">
+            @Html.DisplayNameFor(model => model.Video)
+        </dt>
+
+        <dd>
+            <iframe width="1020" height="630" src="@Html.DisplayFor(model => model.Video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <input type="submit" value="Delete" class="btn btn-primary card-btn center-content width" /> |
+            <a href="@Url.Action("Index", "Season2", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content center width">Back to List</a>
+        </div>
+    }
+</div>

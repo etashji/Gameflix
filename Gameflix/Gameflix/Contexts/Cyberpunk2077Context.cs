@@ -17,5 +17,7 @@ namespace Gameflix.Contexts
         }
 
         public DbSet<Season1> Season1 { get; set; }
+
+        public DbSet<Season2> Season2 { get; set; }
     }
 }

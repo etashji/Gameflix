@@ -1,24 +1,26 @@
-﻿@model Gameflix.Areas.Cyberpunk2077.Models.Season1
+﻿@model Gameflix.Areas.Cyberpunk2077.Models.Season2
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
-<h2 class="white-font center">Create</h2>
+<h2 class="white-font">Edit</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal center">
         <h4 class="white-font">Season 2</h4>
-        <hr class="white-font"/>
+        <hr class="white-font" />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Season2Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.episodeNumber, htmlAttributes: new { @class = "control-label col-md-2 white-font" })
             <div class="col-md-10 center-content">
-                @Html.EditorFor(model => model.episodeNumber, new { htmlAttributes = new { @class = "form-control small-width center-content" } })
+                @Html.EditorFor(model => model.episodeNumber, new { htmlAttributes = new { @class = "form-control center-content small-width" } })
                 @Html.ValidationMessageFor(model => model.episodeNumber, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,15 +35,16 @@
         <br />
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2 white-font" })
-            <div>
-                @Html.TextAreaFor(model => model.Description, new {style = "width: 400px;"})
+            <div class="col-md-10 center-content">
+                @Html.TextAreaFor(model => model.Description, new { style = "width: 800px;" })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="form-group">
             @Html.LabelFor(model => model.Video, htmlAttributes: new { @class = "control-label col-md-2 white-font" })
-            <div class="col-md-10 center-content">
+            <div class="col-md-10 center-video">
+                <iframe width="1020" height="630" src="@Html.DisplayFor(model => model.Video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 @Html.EditorFor(model => model.Video, new { htmlAttributes = new { @class = "form-control center-content" } })
                 @Html.ValidationMessageFor(model => model.Video, "", new { @class = "text-danger" })
             </div>
@@ -49,14 +52,14 @@
         <br />
         <div>
             <div>
-                <input type="submit" value="Create" class="btn btn-primary card-btn center-content width" />
+                <input type="submit" value="Save" class="btn btn-primary card-btn center-content width" />
             </div>
         </div>
     </div>
 }
 <br />
 <div>
-    <a href="@Url.Action("Index", "Season1", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content center width">Back to List</a>
+    <a href="@Url.Action("Index", "Season2", new { area = "Cyberpunk2077" })" class="btn btn-primary card-btn center-content center width">Back to List</a>
 </div>
 
 @section Scripts {
